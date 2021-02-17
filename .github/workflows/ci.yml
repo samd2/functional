@@ -276,6 +276,7 @@ jobs:
             packages: "clang-5.0"
             packages_to_remove: ""
             os: "ubuntu-16.04"
+            container: "ubuntu:14.04"
             cxx: "clang++-5.0"
             sources: ""
             llvm_os: "trusty"
@@ -356,6 +357,7 @@ jobs:
           COMPILER: ${{ matrix.compiler }}
           CXXSTD: ${{ matrix.cxxstd }}
           TRAVIS_BRANCH: ${{ github.base_ref }}
+          TRAVIS_OS_NAME: "linux"
         run: |
           echo '==================================> SETUP'
           if [ -n "$GHA_CONTAINER" ]; then
@@ -498,6 +500,7 @@ jobs:
           COMPILER: ${{ matrix.compiler }}
           CXXSTD: ${{ matrix.cxxstd }}
           TRAVIS_BRANCH: ${{ github.base_ref }}
+          TRAVIS_OS_NAME: "osx"
         run: |
           echo '==================================> SETUP'
           set -ex
